@@ -13,9 +13,8 @@ function showScripture() {
 	//INPUT
 	let name =document.getElementById("Name").value;
 	//PROCESSING
-		let output = ' 1 Behold, I speak unto you, ' + name +', a few words. Behold, thou art blessed, and art under no condemnation. But beware of pride, lest thou shouldst enter into temptation. 2 Make known thy calling unto the church, and also before the world, and thy heart shall be opened to preach the truth from henceforth and forever. Amen.'
+		let output = ' Behold, I speak unto you, ' + name +', a few words. Behold, thou art blessed, and art under no condemnation. But beware of pride, lest thou shouldst enter into temptation. Make known thy calling unto the church, and also before the world, and thy heart shall be opened to preach the truth from henceforth and forever. Amen.'
 	
 	//OUTPUT
-	const Scripture =document.getElementById('output')
-	Scripture.innerHTML =output
+	document.getElementById('output').innerHTML =output;
 }
