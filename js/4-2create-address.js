@@ -10,10 +10,10 @@ OUTPUT: Display the 3 elements concatenated on the document
 */
 function createAddress() {
 	//INPUT
-	let x = document.getElementById('city').value;
-	let y = document.getElementById('state').value;
-	let z = document.getElementById('zipCode').value;
+	let city = document.getElementById('city').value;
+	let state = document.getElementById('state').value;
+	let zipCode = document.getElementById('zipCode').value;
 	//PROCESSING
 	//OUTPUT
-	document.getElementById('output').innerHTML = x + ", " + y + " " + z ;
+	document.getElementById('output').innerHTML = city + ", " + state + "  " + zipCode ;
 }
