@@ -47,4 +47,10 @@ h3 {
 label {
 	display: block;
 	margin: 5px;
+	text-align: right;
+	margin-right: 95px;
+}
+
+button{
+	margin-right: 95px;
 }
