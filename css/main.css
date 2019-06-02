@@ -59,3 +59,8 @@ body {
     font-size: smaller;
     color: #fff;
   } 
+
+  label {
+    display: block;
+    margin: 5px;
+  }
