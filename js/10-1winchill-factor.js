@@ -1,43 +1,29 @@
-// Get Current Date
-let today = new Date(); // new Date object
-// now concatenate formatted output
-let date = (today.getMonth()+1) + " / " +  today.getDate() + " / " + today.getFullYear();
-document.getElementById('currentdate').innerHTML = date;
-
 /* Defining Table
-INPUT: 
-	Get two numbers from firstNumber and secondNumber from the document
-	Get the result typed from the input box
-	
-PROCESSING: 
-	Add the two numbers store in answerKey
-	Declare conditional if the sum is equal to the result then show if message otherwise show message from else
-	
-OUTPUT: Display message on the document
+INPUT: Get the current temperature and wind speed from two different input boxes
+PROCESSING: Apply the formula of wind chill factor to code, using variables and creating functions
+OUTPUT: Display the result of the equation of the windchill factor
 */
-
-const MAX = 100;
-let firstNumber = Math.floor (Math.random() * Math.floor(MAX));
-let secondNumber = Math.floor(Math.random() * Math.floor(MAX));
-document.getElementById('firstNumber').innerHTML = firstNumber;
-document.getElementById('secondNumber').innerHTML = secondNumber;
-
-function checkAnswer() {
-	//INPUT
-	let firstOperating = parseInt(document.getElementById('firstNumber').innerHTML);
-	let secondOperating = parseInt(document.getElementById('secondNumber').innerHTML);
-	let result = parseInt(document.getElementById('answer').value);
+	function doInputOutput() {
 	
-	//PROCESSING
-	let sum = firstOperating + secondOperating;
-	let message = "";
-	if(result == sum){
-		 message = "Correct Good job!";
-		 }
-	else{
-		message = "Sorry. That is incorrect. The answer is " + sum + ".";
+	//INPUT
+	let tempF = parseFloat(document.getElementById('temperature').value);
+	let speed = parseFloat(document.getElementById('windSpeed').value);
+	let output = windChill(tempF, speed);
+	
+	//OUTPUT
+	document.getElementById('output').innerHTML = output;
 	}
-//OUTPUT
-	document.getElementById("output").innerHTML = message;
 
-}
+	//PROCESSING
+	function windChill(tempF, speed) {
+	if (tempF > 50 || speed < 3) {
+		return "N/A";
+	} 
+		
+	else {
+	let output = 35.74 + (0.6215 * tempF) - (35.75 * Math.pow(speed, 0.16)) + (0.4275 * (tempF * Math.pow(speed, 0.16)));
+	return "The windchill for today is "+ Math.round(output)+ "&deg (F)";
+	}
+
+	}
+
